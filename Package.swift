@@ -31,7 +31,8 @@ let package = Package(
             sources: [ "seekable_format" ],
             publicHeadersPath: ".",
             cSettings: [
-                .headerSearchPath(".")
+                .headerSearchPath("."),
+                .headerSearchPath("../lib/common")
             ]),
         .target(
             name: "libzstd",
@@ -39,8 +40,7 @@ let package = Package(
             sources: [ "common", "compress", "decompress", "dictBuilder" ],
             publicHeadersPath: ".",
             cSettings: [
-                .headerSearchPath("."),
-                .headerSearchPath("common")
+                .headerSearchPath(".")
             ])
     ],
     swiftLanguageVersions: [.v5],
