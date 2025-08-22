@@ -31,7 +31,7 @@ let package = Package(
             publicHeadersPath: ".",
             cSettings: [
                 .headerSearchPath(".")
-            ])
+            ]),
         .target(
             name: "libzstd",
             path: "lib",
