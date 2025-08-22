@@ -27,6 +27,7 @@ let package = Package(
         .target(
             name: "libseekable_format",
             dependencies: [ "libzstd" ],
+            exclude: [ "examples", "tests" ],
             path: "contrib",
             sources: [ "seekable_format" ],
             publicHeadersPath: ".",
