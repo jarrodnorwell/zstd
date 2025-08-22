@@ -39,7 +39,8 @@ let package = Package(
             sources: [ "common", "compress", "decompress", "dictBuilder" ],
             publicHeadersPath: ".",
             cSettings: [
-                .headerSearchPath(".")
+                .headerSearchPath("."),
+                .headerSearchPath("common")
             ])
     ],
     swiftLanguageVersions: [.v5],
