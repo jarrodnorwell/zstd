@@ -34,7 +34,10 @@ let package = Package(
             cSettings: [
                 .headerSearchPath("."),
                 .headerSearchPath(".."),
-                .headerSearchPath("../lib/common")
+                .headerSearchPath("../lib/common"),
+                .unsafeFlags([
+                    .define("ZSTD_STATIC_LINKING_ONLY")
+                ])
             ]),
         .target(
             name: "libzstd",
