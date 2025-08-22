@@ -33,6 +33,7 @@ let package = Package(
             publicHeadersPath: ".",
             cSettings: [
                 .headerSearchPath("."),
+                .headerSearchPath(".."),
                 .headerSearchPath("../lib/common")
             ]),
         .target(
