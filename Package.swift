@@ -51,10 +51,9 @@ let package = Package(
         .target(
             name: "libzstdwrapper",
             path: "zlibWrapper",
-            sources: [ "." ],
-            publicHeadersPath: "zlibWrapper",
+            publicHeadersPath: ".",
             cSettings: [
-                .headerSearchPath("zlibWrapper")
+                .headerSearchPath(".")
             ])
     ],
     swiftLanguageVersions: [.v5],
