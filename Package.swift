@@ -14,6 +14,9 @@ let package = Package(
             name: "libzstd",
             targets: [ "libzstd" ]),
         .library(
+            name: "libzstdwrapper",
+            targets: [ "libzstdwrapper" ]),
+        .library(
             name: "libseekable_format",
             targets: [ "libseekable_format" ])
     ],
@@ -44,6 +47,14 @@ let package = Package(
             publicHeadersPath: ".",
             cSettings: [
                 .headerSearchPath(".")
+            ]),
+        .target(
+            name: "libzstdwrapper",
+            path: "zlibWrapper",
+            sources: [ "." ],
+            publicHeadersPath: "zlibWrapper",
+            cSettings: [
+                .headerSearchPath("zlibWrapper")
             ])
     ],
     swiftLanguageVersions: [.v5],
