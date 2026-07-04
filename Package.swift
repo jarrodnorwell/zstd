@@ -54,7 +54,8 @@ let package = Package(
             publicHeadersPath: ".",
             cSettings: [
                 .headerSearchPath("."),
-                .headerSearchPath("../lib")
+                .headerSearchPath("../lib"),
+                .headerSearchPath("../programs")
             ])
     ],
     swiftLanguageVersions: [.v5],
