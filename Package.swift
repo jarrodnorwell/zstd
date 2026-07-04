@@ -55,6 +55,7 @@ let package = Package(
             cSettings: [
                 .headerSearchPath("."),
                 .headerSearchPath("../lib"),
+                .headerSearchPath("../lib/common"),
                 .headerSearchPath("../programs")
             ])
     ],
