@@ -53,7 +53,8 @@ let package = Package(
             path: "zlibWrapper",
             publicHeadersPath: ".",
             cSettings: [
-                .headerSearchPath(".")
+                .headerSearchPath("."),
+                .headerSearchPath("../lib")
             ])
     ],
     swiftLanguageVersions: [.v5],
