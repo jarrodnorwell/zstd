@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version: 6.2
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,7 +6,9 @@ import PackageDescription
 let package = Package(
     name: "zstd",
     platforms: [
-        .macOS(.v10_10), .iOS(.v9), .tvOS(.v9)
+        .iOS(.v15),
+        .macOS(.v12),
+        .tvOS(.v15)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -51,18 +53,21 @@ let package = Package(
         .target(
             name: "libzstdwrapper",
             path: "zlibWrapper",
-            publicHeadersPath: ".",
             exclude: [
                 "examples"
             ],
+            publicHeadersPath: ".",
             cSettings: [
                 .headerSearchPath("."),
                 .headerSearchPath("../lib"),
                 .headerSearchPath("../lib/common"),
-                .headerSearchPath("../programs")
+                .headerSearchPath("../programs"),
+                .define("ZSTD_STATIC_LINKING_ONLY")
             ])
     ],
-    swiftLanguageVersions: [.v5],
+    swiftLanguageModes: [
+        .v6
+    ],
     cLanguageStandard: .gnu11,
     cxxLanguageStandard: .gnucxx14
 )
